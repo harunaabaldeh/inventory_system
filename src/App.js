@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
-
+import Info from "./Info.js";
+import "./Info.css";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Info />
+      <AddItem text="ron" number={2} />
+      <AddItem text="ebrima" />
+      <AddItem text="awa" />
     </div>
+  );
+}
+
+function AddItem(props) {
+  return (
+    <form>
+      <label for="text-form">Type something:</label>
+      <input type="text" value={props.value} id="text-form" />
+      <p>{props.number}</p>
+    </form>
   );
 }
 
